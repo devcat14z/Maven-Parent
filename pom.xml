@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jp.co.linx5656</groupId>
+  <artifactId>MAVEN-PARENT</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>親プロジェクト</name>
+
+  <properties>
+    <maven.test.failure.ignore>true</maven.test.failure.ignore>
+    <spring.framework.version>2.5.6.SEC03</spring.framework.version>
+    <spring.batch.version>2.1.9.RELEASE</spring.batch.version>
+    <dbunit.version>2.4.9</dbunit.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- logbackの設定 -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+        <version>1.7.4</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.0.10</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.4</version>
+      </dependency>
+
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.4</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.framework.version}</version>
+        <scope>test</scope>
+        <exclusions>
+          <exclusion>
+            <artifactId>commons-logging</artifactId>
+            <groupId>commons-logging</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.framework.version}</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>commons-logging</artifactId>
+            <groupId>commons-logging</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.batch</groupId>
+        <artifactId>spring-batch-core</artifactId>
+        <version>${spring.batch.version}</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>commons-logging</artifactId>
+            <groupId>commons-logging</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.batch</groupId>
+        <artifactId>spring-batch-test</artifactId>
+        <version>${spring.batch.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-dbcp</groupId>
+        <artifactId>commons-dbcp</artifactId>
+        <version>1.2.2</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>1.4</version>
+      </dependency>
+      <dependency>
+        <groupId>hsqldb</groupId>
+        <artifactId>hsqldb</artifactId>
+        <version>1.8.0.7</version>
+      </dependency>
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>1.5.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>1.5.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.dbunit</groupId>
+        <artifactId>dbunit</artifactId>
+        <version>${dbunit.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>
